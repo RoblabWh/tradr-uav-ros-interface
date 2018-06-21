@@ -1,0 +1,2 @@
+float32 maxFlightSpeed
+float32 maxRotationSpeed

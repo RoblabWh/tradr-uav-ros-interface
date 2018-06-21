@@ -1,0 +1,6 @@
+uint8 TYPE_REGISTRATION = 0
+uint8 TYPE_UNREGISTRATION = 1
+uint8 TYPE_RESET = 3
+
+uint8 type
+uint32 id

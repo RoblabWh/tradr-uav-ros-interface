@@ -1,0 +1,2 @@
+uint32 cameraID
+VideoFormat videoFormat

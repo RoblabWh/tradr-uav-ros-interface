@@ -1,0 +1,227 @@
+
+   U A V  -  L I S T
+=======================
+
+
+UavList.msg
+
+uint8   numberOfUavs
+Uav[]   uavs
+
+
+
+Uav.msg
+
+uint8                   id
+string 			name
+string 			model
+string 			guid
+UavCapabilities		capabilities
+Camera[]		cameras
+
+
+
+UavCapabilities.msg
+
+bool 			manuelControl
+UavBoundaries		boundries
+
+
+
+UavBoundaries.msg
+
+float32	maxFlightSpeed
+float32	maxRotationSpeed
+
+
+
+Camera.msg
+
+PhotoSettingsCapabilities 	photoSettingsCapabilities
+StreamSettingsCapabilities	streamSettingsCapabilities
+OrientationBoundaries		orientationBoundaries
+
+
+
+PhotoSettingsCapabilities.msg
+
+string[] 		apertureCapabilities
+string[] 		shutterSpeedCapabilities
+string[] 		isoCapabilities
+string[] 		resolutionCapabilities
+
+
+
+StreamSettingsCapabilities.msg
+
+bool 			streamCapability
+VideoFormat[]		videoFormatCapabilities
+
+
+
+VideoFormat.msg
+
+uint32		height
+uint32		width
+uint8		fps
+
+
+
+OrientationBoundaries.msg
+
+bool 		rollCapability
+float32 	rollLimitMax
+float32 	rollLimitMin
+bool 		pitchCapability
+float32 	pitchLimitMax
+float32 	pitchLimitMin
+bool 		yawCapability
+float32 	yawLimitMax
+float32 	yawLimitMin
+    
+
+
+
+
+   S T A T U S  -  M E S S A G E
+===================================
+
+Status.msg
+
+float32 	batteryStatus  // percentage [0; 100]
+Velocity 	velocity
+Pose 		pose
+CurrentWork	currentWork
+
+
+
+Pose.msg 
+
+float32 latitude
+float32 longitude
+float32 altitude
+float32 roll
+float32 pitch
+float32 yaw
+
+
+
+CurrentWork.msg
+
+bool 	busy
+uint32 	currentTaskID 
+uint32 	currentWaypointID
+uint32 	currentActionID
+
+
+
+Velocity.msg
+
+float32 velX
+float32 velY
+float32 velZ
+float32 velRoll
+float32 velPitch
+float32 velYaw
+
+
+
+
+   T A S K  -  M E S S A G E
+===================================
+
+
+   T a s k R e q
+-------------------
+ 
+TaskReq.msg
+
+Task	task
+
+
+
+Task.msg
+ 
+uint32 		taskID
+uint32		parentTaskID
+string          name
+Waypoint[] 	waypoints
+
+
+
+Waypoint.msg
+
+uint32 			waypointID
+Pose			uavPose
+FotoAction[] 		fotoActions
+float32			velocity
+
+
+
+FotoAction.msg
+ 
+uint32				cmaID
+CameraSettings	 		camSettings
+Pose	 			camPose
+
+
+
+Pose.msg
+
+float32 latitude
+float32 longitude
+float32 altitude
+float32 roll
+float32 pitch
+float32 yaw
+
+
+
+CameraSettings.msg
+
+uint32 	aperture // maybe switch to enum or percentage?
+uint32 	shutterSpeed // maybe switch to enum or percentage?
+uint32	iso
+uint32 	resolution // TBD: clarify content meaning (4:3, 16:9, etc.?), maybe switch to enum or percentage?
+
+
+
+   T a s k A c k
+-------------------
+
+TaskAck.msg
+
+bool 	accepted
+int	error_code
+
+
+
+   T a s k S t a t u s
+-------------------------
+
+TaskStatus.msg
+
+uint32	waypointID
+uint32 	actionID
+string	description
+
+
+
+   T a s k F i n
+-------------------
+
+TaskFin.msg
+
+bool	successful
+int	error_code
+
+
+
+   T a s k C o n t r o l
+---------------------------
+
+TaskControl.msg
+
+bool 	cancel
+
+

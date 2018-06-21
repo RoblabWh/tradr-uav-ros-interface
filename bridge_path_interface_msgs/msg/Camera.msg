@@ -1,0 +1,3 @@
+PhotoSettingsCapabilities photoSettingsCapabilities
+StreamSettingsCapabilities streamSettingsCapabilities
+OrientationBoundaries orientationBoundaries

@@ -1,0 +1,82 @@
+
+
+U A V  -  L I S T
+=======================
+
+Service
+Server: uav_bridge
+Name: getUavList
+Req-Typ: Empty.msg
+Rsp-Typ: UavList.msg
+
+Topic
+Direction: uav_path <- uav_bridge
+Name: uavRegistered
+Typ: Uav.msg
+
+
+
+
+
+S T A T U S  -  M E S S A G E
+===================================
+
+Topic
+Direction: uav_path <- uav_bridge
+Name: uav_<id>/status
+Typ: Status.msg
+
+
+
+
+T A S K  -  M E S S A G E
+===================================
+
+
+T a s k R e q
+-------------------
+
+Topic
+Direction: uav_path -> uav_bridge
+Name: uav_<id>/task/req
+Typ: TaskReq.msg
+
+
+
+T a s k A c k
+-------------------
+
+Topic
+Direction: uav_path <- uav_bridge
+Name: uav_<id>/task/ack
+Typ: TaskAck.msg
+
+
+
+T a s k S t a t u s
+-------------------------
+
+Topic
+Direction: uav_path <- uav_bridge
+Name: uav_<id>/task/status
+Typ: TaskStatus.msg
+
+
+
+T a s k F i n
+-------------------
+
+Topic
+Direction: uav_path <- uav_bridge
+Name: uav_<id>/task/fin
+Typ: TaskFin.msg
+
+
+
+T a s k C o n t r o l
+---------------------------
+
+Topic
+Direction: uav_path -> uav_bridge
+Name: uav_<id>/task/control
+Typ: TaskControl.msg

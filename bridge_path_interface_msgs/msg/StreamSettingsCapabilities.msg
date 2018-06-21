@@ -1,0 +1,2 @@
+bool streamCapability
+VideoFormat[] videoFormatCapabilities

@@ -1,0 +1,3 @@
+TaskStatus taskStatus
+WaypointStatus waypointStatus
+ActionStatus actionStatus

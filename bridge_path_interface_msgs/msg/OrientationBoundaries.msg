@@ -1,0 +1,9 @@
+bool rollCapability
+float32 rollLimitMax
+float32 rollLimitMin
+bool pitchCapability
+float32 pitchLimitMax
+float32 pitchLimitMin
+bool yawCapability
+float32 yawLimitMax
+float32 yawLimitMin

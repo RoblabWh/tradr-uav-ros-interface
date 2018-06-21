@@ -1,0 +1,2 @@
+bool manuelControl
+UavBoundaries boundries

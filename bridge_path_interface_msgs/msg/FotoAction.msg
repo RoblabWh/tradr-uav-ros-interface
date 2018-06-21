@@ -1,0 +1,3 @@
+uint32 camID
+CameraSettings camSettings
+Pose camPose
